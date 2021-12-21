@@ -1,6 +1,14 @@
-#include <stdio.h>
+#include <termios.h>
+#include <unistd.h>
+
+void enableRawMode() {
+  struct termios raw;
+
+
+}
 
 int main() {
-  printf("this is test\n");
+  char c;
+  while (read(STDIN_FILENO, &c, 1) == 1 && c != 'q');
   return 0;
 }
